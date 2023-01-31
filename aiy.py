@@ -63,4 +63,5 @@ if __name__ == '__main__':
     if args.prompt:
         main(args.prompt)
     else:
-        parser.print_help()
+        prompt = input("Documentation Request: ")
+        main(prompt)
