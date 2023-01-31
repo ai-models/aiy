@@ -43,18 +43,15 @@ To use AIY, simply run the script and provide a prompt that describes the task y
 
 For example:
 
-
 `python aiy.py "How to install and run a web server on Ubuntu 20.04?"`
 
 Options
 -------
 
-* You can set the OpenAI model to use by setting the `OPENAI_MODEL` environment variable in your .env file. For example:
+* You can set the OpenAI model to use by setting the `OPENAI_MODEL` environment variable in your .env file.
 
-`echo "OPENAI_MODEL=text-davinci-002" > .env`
-* You can disable the notice that is displayed at the end of the response by setting the `OPENAI_DISABLE_NOTICE` environment variable in your .env file. For example:
+* You can disable the notice that is displayed at the end of the response by setting the `OPENAI_DISABLE_NOTICE` environment variable in your .env file.
 
-`echo "OPENAI_DISABLE_NOTICE=true" > .env`
 
 Contributing
 ------------
