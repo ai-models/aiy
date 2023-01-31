@@ -14,29 +14,13 @@ Requirements
 Getting Started
 ---------------
 
-1.  Clone the repository:
+1.  Clone the repository: `git clone https://github.com/<username>/aiy.git`
 
-bashCopy code
+2.  Create a virtual environment: `python3 -m venv venv`
 
-`git clone https://github.com/<username>/aiy.git`
+3.  Activate the virtual environment: `source venv/bin/activate`
 
-2.  Create a virtual environment:
-
-Copy code
-
-`python3 -m venv venv`
-
-3.  Activate the virtual environment:
-
-bashCopy code
-
-`source venv/bin/activate`
-
-4.  Install the dependencies:
-
-Copy code
-
-`pip install rich python-dotenv`
+4.  Install the dependencies: `pip install rich python-dotenv`
 
 5.  Get your OpenAI API Key:
 6.  Go to OpenAI's website ([https://openai.com/api/login](https://openai.com/api/login))
@@ -46,11 +30,7 @@ Copy code
 10.  Copy the API key
 11.  Set your OpenAI API Key in your .env file:
 
-bashCopy code
-
-`echo "OPENAI_API_KEY=<your_api_key>" > .env`
-
-7.  Run the tool:
+12.  Run the tool:
 
 Copy code
 
@@ -63,22 +43,16 @@ To use AIY, simply run the script and provide a prompt that describes the task y
 
 For example:
 
-cssCopy code
 
 `python aiy.py "How to install and run a web server on Ubuntu 20.04?"`
 
 Options
 -------
 
-*   You can set the OpenAI model to use by setting the `OPENAI_MODEL` environment variable in your .env file. For example:
-
-bashCopy code
+* You can set the OpenAI model to use by setting the `OPENAI_MODEL` environment variable in your .env file. For example:
 
 `echo "OPENAI_MODEL=text-davinci-002" > .env`
-
-*   You can disable the notice that is displayed at the end of the response by setting the `OPENAI_DISABLE_NOTICE` environment variable in your .env file. For example:
-
-bashCopy code
+* You can disable the notice that is displayed at the end of the response by setting the `OPENAI_DISABLE_NOTICE` environment variable in your .env file. For example:
 
 `echo "OPENAI_DISABLE_NOTICE=true" > .env`
 
