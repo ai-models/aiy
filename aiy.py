@@ -9,7 +9,8 @@ from rich.console import Console
 from rich.markdown import Markdown
 console = Console()
 
-load_dotenv()
+# load dotenv from real path
+load_dotenv(os.path.join(os.path.dirname(os.path.realpath(__file__)), ".env"))
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 if not openai.api_key:

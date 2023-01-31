@@ -11,30 +11,27 @@ Requirements
 *   Rich library (install via `pip install rich`)
 *   dotenv library (install via `pip install python-dotenv`)
 
-Getting Started
+Quick Start
+-----------
+# Setup
+1. Clone repository `git clone https://github.com/visioninit.aiy.git'
+2. Change directory `cd aiy`
+3. Install dependencies `pipenv install` (or `pip install -r requirements.txt`)
+4. Configure and rename .env `mv .env.default .env`
+
+# Add to path to run anywhere
+1. Setup script `sudo ./setup.sh` (or `sudo python3 setup.py`) creates a aiy file in /usr/local/bin
+
+Configuration
 ---------------
 
-1.  Clone the repository: `git clone https://github.com/<username>/aiy.git`
-
-2.  Create a virtual environment: `python3 -m venv venv`
-
-3.  Activate the virtual environment: `source venv/bin/activate`
-
-4.  Install the dependencies: `pip install rich python-dotenv`
-
-5.  Get your OpenAI API Key:
-6.  Go to OpenAI's website ([https://openai.com/api/login](https://openai.com/api/login))
-7.  Sign up or log in to your account
-8.  Go to the API Key section ([https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys))
-9.  Create a new secret key
-10.  Copy the API key
-11.  Set your OpenAI API Key in your .env file:
-
-12.  Run the tool:
-
-Copy code
-
-`python aiy.py`
+1.  Get your OpenAI API Key:
+2.  Go to OpenAI's website ([https://openai.com/api/login](https://openai.com/api/login))
+3.  Sign up or log in to your account
+4.  Go to the API Key section ([https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys))
+5.  Create a new secret key
+6.  Copy the API key
+7.  Set your OpenAI API Key in your .env file
 
 Usage
 -----
@@ -43,7 +40,11 @@ To use AIY, simply run the script and provide a prompt that describes the task y
 
 For example:
 
-`python aiy.py "How to install and run a web server on Ubuntu 20.04?"`
+`python aiy.py "How to install and run a web server on Ubuntu?"`
+
+If you have added the script to your path, you can run it from anywhere:
+
+`aiy "How to install and run a web server on Ubuntu?"`
 
 Options
 -------
