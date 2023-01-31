@@ -7,6 +7,7 @@ import openai
 from dotenv import load_dotenv
 from rich.console import Console
 from rich.markdown import Markdown
+
 console = Console()
 
 # load dotenv from real path
@@ -23,12 +24,14 @@ if not openai.api_key:
                   "\t5. Set the API key in your .env file as `OPENAI_API_KEY=<your_api_key>`")
     exit()
 
+
 def pretty_print(response):
     if os.getenv("OPENAI_DISABLE_NOTICE") != "true":
         response += "\n[Notice] OpenAI's models have limited knowledge after 2020. Commands and versions may be outdated." \
                     "Command recommendations are not guaranteed to work and may be dangerous. Use at your own risk.\n" \
                     "To disable this notice, set the environment variable OPENAI_DISABLE_NOTICE to true."
     console.print(Markdown(response.strip()))
+
 
 def main(prompt):
     os_name = platform.system()
