@@ -7,10 +7,11 @@ name = "pypi"
 openai = "*"
 rich = "*"
 python-dotenv = "*"
+appdirs = "*"
 
 [dev-packages]
 pipreqs = "*"
+pyinstaller = "*"
 
 [requires]
-python_version = "3.10"
-python_full_version = "3.10.7"
+python_version = "3"
