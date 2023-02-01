@@ -3,6 +3,7 @@ import os
 import sys
 
 import appdirs
+from rich.prompt import Prompt
 from rich import console
 
 if os.path.exists('.env'):
@@ -14,7 +15,7 @@ else:
 
 
 def prompt_new_key():
-    apikey_new = getpass.getpass("OpenAI API Key (hidden): ")
+    apikey_new = Prompt.ask("OpenAI API Key (hidden)", password=True)
     if len(apikey_new) != 51:
         print('Invalid API key. Exiting...')
         sys.exit()

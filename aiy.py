@@ -3,6 +3,7 @@ import argparse
 import platform
 import sys
 
+from rich.prompt import Prompt
 from rich.console import Console
 from rich.markdown import Markdown
 
@@ -13,10 +14,11 @@ from resources.condiut import get_completion
 def pre_completion(user_input):
     os_name = platform.platform()
     os_arch = platform.architecture()[0]
-    user_input = f"Please provide a concise list of commands and a brief guide to accomplish this task:\n" \
-             f"OS: {os_name}\n" \
+    user_input = f"OS: {os_name}\n" \
              f"Architecture: {os_arch}\n" \
-             f"Format: Markdown, no \n\n{user_input}"
+             f"User question: {user_input}\n\n" \
+             f"Please provide a concise response with possible solutions to the user's question. " \
+             f"Response format: advanced Markdown, left-aligned headers, 80 characters per line.\n\n"
     return user_input
 def post_completion(openai_response):
     if config.get_expert_mode() != "true":
@@ -24,9 +26,10 @@ def post_completion(openai_response):
                            'may be outdated.' \
                            'Command recommendations are not guaranteed to work and may be dangerous. Use at your own' \
                            'risk.\n' \
-                           'To disable this notice, switch to expert mode with `aiy -x`.'
-    console.print(Markdown(openai_response.strip()))
-
+                           'To disable this notice, switch to expert mode with `aiy --expert`.'
+    print(openai_response)
+    print("")
+    console.print(Markdown(openai_response.strip(), justify="left"), justify="left", markup=True)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Query OpenAI')
@@ -37,14 +40,13 @@ if __name__ == '__main__':
     console = Console()
 
     if args.apikey:
-        config.set_api_key('')
         config.prompt_new_key()
         sys.exit()
     if args.expert:
         config.toggle_expert_mode()
         sys.exit()
     if not args.prompt:
-        prompt = input("Documentation Request: ")
+        prompt = Prompt.ask("Documentation Request")
         if prompt == "":
             print("No prompt provided. Exiting...")
             sys.exit()
