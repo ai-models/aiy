@@ -3,9 +3,7 @@ import os
 import sys
 
 import appdirs
-from rich.ansi import console
-
-from resources.condiut import get_completion
+from rich import console
 
 if os.path.exists('.env'):
     _config_dir = os.path.dirname(os.path.realpath(__file__))

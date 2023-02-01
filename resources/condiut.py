@@ -1,10 +1,18 @@
+import sys
+
 import openai
-import config
+
+from resources import config
 
 openai.api_key = config.get_api_key()
 engine = config.get_model()
 
 def get_completion(prompt):
+    if prompt is None:
+        print("Prompt is None")
+
+    # print (f"Prompt: {prompt}")
+    # print(f"Engine: {engine}")
     try:
         response = openai.Completion.create(
             engine=engine,
