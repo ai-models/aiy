@@ -1,5 +1,7 @@
 AIY - Command Line Assistant with OpenAI
 ========================================
+<img src="https://user-images.githubusercontent.com/654993/216195116-931ab643-b945-4076-98f0-2aef834bec85.png" width="500">
+
 
 AIY is a simple command line tool that uses OpenAI's language model to provide a documentation-like experience to users. With AIY, users can get answers to their technical questions and receive step-by-step guidance to complete tasks.
 
