@@ -21,10 +21,7 @@ Quick Start
 1. Clone repository `git clone https://github.com/visioninit.aiy.git'
 2. Change directory `cd aiy`
 3. Install dependencies `pipenv install` (or `pip install -r requirements.txt`)
-4. Configure and rename .env `mv .env.default .env`
-
-# Add to path to run anywhere
-1. Setup script `sudo ./setup.sh` (or `sudo python3 setup.py`) creates a aiy file in /usr/local/bin
+4. Configure and rename .env `mv .env.default .env` (env is not required)
 
 Configuration
 ---------------

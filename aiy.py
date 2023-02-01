@@ -32,9 +32,9 @@ def post_completion(openai_response):
     console.print(Markdown(openai_response.strip(), justify="left"), justify="left", markup=True)
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Query OpenAI')
+    parser = argparse.ArgumentParser(prog="aiy - CLI assistant", description='A quick and handy way to get technical information on the command line', epilog='Made with <3 by Justin Riddiough')
     parser.add_argument('-x', '--expert', action="store_true", help='Toggle warning', dest='expert')
-    parser.add_argument('-i', '--key', action="store_true", help='Clear API key', dest='apikey')
+    parser.add_argument('-i', '--key', action="store_true", help='Reset API key', dest='apikey')
     parser.add_argument('prompt', type=str, nargs='?', help='Prompt to send')
     args = parser.parse_args()
     console = Console()
