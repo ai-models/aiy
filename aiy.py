@@ -27,8 +27,8 @@ def post_completion(openai_response):
                            'Command recommendations are not guaranteed to work and may be dangerous. Use at your own' \
                            'risk.\n' \
                            'To disable this notice, switch to expert mode with `aiy --expert`.'
-    print(openai_response)
-    print("")
+    # print(openai_response)
+    # print("")
     console.print(Markdown(openai_response.strip(), justify="left"), justify="left", markup=True)
 
 if __name__ == '__main__':
