@@ -30,10 +30,8 @@ jobs:
       - name: Build openai wheel
         run: |
           mkdir pynsist_whls
-          git clone https://github.com/openai/openai-python/tree/v0.26.4 openai.zip
-          tar -xf openai.zip
-          dir
-          cd openai-python-v0.26.4
+          git clone --single-branch --branch v0.26.4 https://github.com/openai/openai-python
+          cd openai-python
           pip wheel . -w ../pynsist_whls
       - name: Build Windows-Installer
         run: |
