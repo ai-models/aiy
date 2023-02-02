@@ -8,7 +8,7 @@ from rich.console import Console
 from rich.markdown import Markdown
 
 from resources import config
-from resources.condiut import get_completion
+from resources.conduit import get_completion
 
 
 def pre_completion(user_input):
