@@ -21,10 +21,10 @@ jobs:
           pip install pyinstaller
       - name: Build openai wheel
         run: |
-          wget https://github.com/openai/openai-python/archive/refs/tags/v0.26.4.zip
-          unzip v0.26.4.zip
-          cd openai-python-v0.26.4
-          pip wheel . -w ../pynsist_whls
+          'wget https://github.com/openai/openai-python/archive/refs/tags/v0.26.4.zip'
+          'unzip v0.26.4.zip'
+          'cd openai-python-v0.26.4'
+          'pip wheel . -w ../pynsist_whls'
       - name: Build Windows Binary
         run: |
           pyinstaller --onefile aiy.py --distpath dist/
