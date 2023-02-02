@@ -38,7 +38,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          state-name: '.ftp-deploy-sync-state-win.json'
+          state-name: '.ftp-deploy-sync-state-aiy-win.json'
           local-dir: "out/"
           server-dir: ""
       - name: Upload Release Windows
