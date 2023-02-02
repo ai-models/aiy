@@ -33,6 +33,7 @@ jobs:
           $result=(curl.exe --output v0.26.4.zip --url https://github.com/openai/openai-python/archive/refs/tags/v0.26.4.zip)
           echo $result
           tar -xf v0.26.4.zip
+          dir
           cd openai-python-v0.26.4
           pip wheel . -w ../pynsist_whls
       - name: Build Windows-Installer
