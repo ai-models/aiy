@@ -11,6 +11,11 @@ architectures:
 grade: devel
 confinement: devmode
 
+apps:
+  aiyy:
+    command: bin/aiyy.aiy
+    plugs: [home, network, network-bind, removable-media]
+
 
 parts:
   aiyy-part:
