@@ -13,7 +13,6 @@ confinement: devmode
 parts:
   python3:
     plugin: python
-    python-version: 3
     source: https://github.com/python/cpython
   aiy-part:
     plugin: python
