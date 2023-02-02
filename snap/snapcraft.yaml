@@ -13,10 +13,7 @@ confinement: devmode
 parts:
   aiy-part:
     plugin: python
-    python-version: 3.10
     source: ../.
     build-packages:
       - python3-dev
-    stage-packages:
-      - libssl-dev
     after: [ python3]
