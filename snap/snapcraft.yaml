@@ -11,9 +11,13 @@ grade: devel
 confinement: devmode
 
 parts:
+  python3:
+    plugin: python
+    python-version: 3
+    source: https://github.com/python/cpython
   aiy-part:
     plugin: python
     source: ../.
     build-packages:
       - python3-dev
-    after: [ python3]
+    after: [ python3 ]
