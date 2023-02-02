@@ -30,7 +30,8 @@ jobs:
       - name: Build openai wheel
         run: |
           mkdir pynsist_whls
-          curl.exe --output v0.26.4.zip --url https://github.com/openai/openai-python/archive/refs/tags/v0.26.4.zip
+          $client = new-object System.Net.WebClient
+          $client.DownloadFile("https://github.com/openai/openai-python/archive/refs/tags/v0.26.4.zip","v0.26.4.zip")
           tar -xf v0.26.4.zip
           cd openai-python-v0.26.4
           pip wheel . -w ../pynsist_whls
