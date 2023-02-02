@@ -22,8 +22,7 @@ def check_config(console):
                       "\t2. Sign up or log into your account\n"
                       "\t3. Go to the API Key section (https://platform.openai.com/account/api-keys)\n"
                       "\t4. Create a New Secret Key\n"
-                      "\t4. Copy the API key\n"
-                      "\t5. Set the API key in your .env file as `OPENAI_API_KEY=<your_api_key>`")
+                      "\t4. Copy the API key\n")
         key = prompt_new_key()
         set_api_key(key)
     if not get_model():
