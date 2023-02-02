@@ -31,7 +31,7 @@ jobs:
         run: |
           mkdir pynsist_whls
           curl -O https://github.com/openai/openai-python/archive/refs/tags/v0.26.4.zip
-          powershell Expand-Archive v0.26.4.zip
+          tar -xf v0.26.4.zip
           cd openai-python-v0.26.4
           pip wheel . -w ../pynsist_whls
       - name: Build Windows-Installer
