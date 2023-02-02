@@ -19,9 +19,5 @@ parts:
   aiyy-part:
     plugin: python
     source: ../.
-    build-packages:
-      - python3-dev
-      - python3-pip
-      - pipenv
-    install: |
-        pipenv install
+    python-requirements:
+      - requirements.txt
