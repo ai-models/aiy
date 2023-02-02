@@ -10,6 +10,8 @@ from rich.markdown import Markdown
 from resources import config
 from resources.conduit import get_completion
 
+console = Console()
+
 
 def pre_completion(user_input):
     os_name = platform.platform()
@@ -37,7 +39,7 @@ def main():
     parser.add_argument('-i', '--key', action="store_true", help='Reset API key', dest='apikey')
     parser.add_argument('prompt', type=str, nargs='?', help='Prompt to send')
     args = parser.parse_args()
-    console = Console()
+    config.check_config(console)
 
     if args.apikey:
         config.prompt_new_key()
@@ -53,6 +55,7 @@ def main():
         prompt = pre_completion(prompt)
     else:
         prompt = pre_completion(args.prompt)
+
     with console.status(f"Phoning a friend...  ", spinner="pong"):
         post_completion(get_completion(prompt))
 

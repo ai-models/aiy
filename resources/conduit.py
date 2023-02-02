@@ -4,10 +4,10 @@ import openai
 
 from resources import config
 
-openai.api_key = config.get_api_key()
-engine = config.get_model()
-
 def get_completion(prompt):
+    openai.api_key = config.get_api_key()
+    engine = config.get_model()
+
     if prompt is None:
         print("Prompt is None")
     # print (f"Prompt: {prompt}")
@@ -35,5 +35,4 @@ def get_completion(prompt):
         sys.exit()
     except openai.error.OpenAIError as e:
         print(f"OpenAI API returned an error: {e}")
-        sys,exit()
     return response

@@ -4,14 +4,6 @@ import sys
 
 import appdirs
 from rich.prompt import Prompt
-from rich import console
-
-if os.path.exists('.env'):
-    _config_dir = os.path.dirname(os.path.realpath(__file__))
-    _config_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), ".env")
-else:
-    _config_dir = appdirs.user_config_dir("aiy-config")
-    _config_file = os.path.join(_config_dir, "aiy-config.ini")
 
 
 def prompt_new_key():
@@ -23,7 +15,7 @@ def prompt_new_key():
     return apikey_new
 
 
-def _init_config():
+def check_config(console):
     if not get_api_key():
         console.print("[ERROR] OpenAI API key not found. Please follow these steps to get the API key:\n"
                       "\t1. Go to OpenAI website (https://openai.com/api/login)\n"
@@ -39,6 +31,7 @@ def _init_config():
     if not get_expert_mode():
         set_expert_mode("false")
 
+
 def _get_config(key):
     if not os.path.exists(_config_file):
         return None
@@ -48,7 +41,6 @@ def _get_config(key):
             if line.startswith(f"{key}="):
                 return line.split("=")[1].strip()
 
-    return None
 
 
 def _update_config(key, value):
@@ -110,8 +102,10 @@ def toggle_expert_mode():
         print("Expert mode enabled. You will not see the warning again.")
         set_expert_mode("true")
 
+
 def set_expert_mode(expert_mode):
     _update_config("OPENAI_DISABLE_NOTICE", expert_mode)
+
 
 def get_expert_mode():
     if not os.path.exists(_config_file):
@@ -121,3 +115,11 @@ def get_expert_mode():
         for line in f:
             if line.startswith("OPENAI_DISABLE_NOTICE="):
                 return line[len("OPENAI_DISABLE_NOTICE="):].strip()
+
+
+if os.path.exists('.env'):
+    _config_dir = os.path.dirname(os.path.realpath(__file__))
+    _config_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), ".env")
+else:
+    _config_dir = appdirs.user_config_dir("aiy-config")
+    _config_file = os.path.join(_config_dir, "aiy-config.ini")
