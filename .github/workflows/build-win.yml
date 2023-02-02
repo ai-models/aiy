@@ -37,7 +37,7 @@ jobs:
         run: |
           cp resources/install/win/installer.cfg installer.cfg
           pynsist installer.cfg
-          cp build/nsis/aiy-windows-installer.exe out/
+          cp build/nsis/aiy-windows-installer.exe out\aiy-windows-installer.exe
       - name: Upload Release Windows
         uses: actions/upload-artifact@v3
         with:
