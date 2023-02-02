@@ -30,6 +30,7 @@ jobs:
       - name: Build openai wheel
         run: |
           mkdir pynsist_whls
+          mkdir out
           git clone --single-branch --branch v0.26.4 https://github.com/openai/openai-python
           cd openai-python
           pip wheel . -w ../pynsist_whls
