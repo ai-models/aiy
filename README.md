@@ -48,8 +48,6 @@ If you have added the script to your path, you can run it from anywhere:
 
 `aiy "How to install and run a web server on Ubuntu?"`
 
-<img src="https://user-images.githubusercontent.com/654993/216195116-931ab643-b945-4076-98f0-2aef834bec85.png" width="500">
-
 ![image](https://user-images.githubusercontent.com/654993/216211945-068bb6a6-b937-44ae-a09c-b75aa8f4d9d6.png)
 ![image](https://user-images.githubusercontent.com/654993/216211997-167f131f-023b-4b90-8f06-fc7a0e377f6b.png)
 
