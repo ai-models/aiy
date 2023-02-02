@@ -1,0 +1,22 @@
+name: aiy
+base: core20
+version: '0.1'
+summary: CLI assistant for technical information
+description: |
+  Get technical information on the command line with ease using AIY. Simply type in your question as the prompt and 
+  receive a beautifully formatted and helpful response. This snap also has options for resetting the API key and 
+  toggling warnings. 
+
+grade: devel
+confinement: devmode
+
+parts:
+  aiy-part:
+    plugin: python
+    python-version: 3.10
+    source: .
+    build-packages:
+      - python3-dev
+    stage-packages:
+      - libssl-dev
+    after: [ python3]
