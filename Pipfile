@@ -8,8 +8,5 @@ openai = "0.26.4"
 rich = "13.3.1"
 appdirs = "1.4.4"
 
-[dev-packages]
-pyinstaller = "*"
-
 [requires]
 python_version = "3"
