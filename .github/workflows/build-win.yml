@@ -22,7 +22,7 @@ jobs:
       - name: Build Windows Binary
         run: |
           pyinstaller --onefile aiy.py --distpath dist/
-          mkdir out && cd dist && Compress-Archive -Path . -DestinationPath ../out/aimm-windows-binary.zip
+          mkdir out && cd dist && Compress-Archive -Path . -DestinationPath ../out/aiy-windows-standalone.zip
           cd ..
       - name: Install pynsist
         run: |
@@ -31,18 +31,14 @@ jobs:
         run: |
           cp resources/install/win/installer.cfg installer.cfg
           pynsist installer.cfg
-          cp build/nsis/aimm-windows-installer.exe out/
-      - name: 📂 Deploy FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.2
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          state-name: '.ftp-deploy-sync-state-aiy-win.json'
-          local-dir: "out/"
-          server-dir: ""
+          cp build/nsis/aiy-windows-installer.exe out/
       - name: Upload Release Windows
         uses: actions/upload-artifact@v3
         with:
           name: Windows Binary
-          path: out/aimm-windows-installer.exe
+          path: out/aiy-windows-installer.exe
+      - name: Upload Release Windows
+        uses: actions/upload-artifact@v3
+        with:
+          name: Windows Binary
+          path: out/aiy-windows-standalone.zip
