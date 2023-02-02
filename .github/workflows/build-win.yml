@@ -29,6 +29,7 @@ jobs:
           pip install pynsist
       - name: Build openai wheel
         run: |
+          mkdir pynsist_whls
           'wget https://github.com/openai/openai-python/archive/refs/tags/v0.26.4.zip'
           'unzip v0.26.4.zip'
           'cd openai-python-v0.26.4'
