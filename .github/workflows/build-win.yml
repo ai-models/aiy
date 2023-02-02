@@ -14,25 +14,25 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: 3.10
-      - name: Install dependencies
+#      - name: Install dependencies
+#        run: |
+#          python -m pip install --upgrade pip
+#          pip install -r requirements.txt
+#          pip install pyinstaller
+#      - name: Build Windows Binary
+#        run: |
+#          pyinstaller --onefile aiy.py --distpath dist/
+#          mkdir out && cd dist && Compress-Archive -Path . -DestinationPath ../out/aiy-windows-standalone.zip
+#          cd ..
+      - name: Install pynsist
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install pyinstaller
+          pip install pynsist
       - name: Build openai wheel
         run: |
           'wget https://github.com/openai/openai-python/archive/refs/tags/v0.26.4.zip'
           'unzip v0.26.4.zip'
           'cd openai-python-v0.26.4'
           'pip wheel . -w ../pynsist_whls'
-      - name: Build Windows Binary
-        run: |
-          pyinstaller --onefile aiy.py --distpath dist/
-          mkdir out && cd dist && Compress-Archive -Path . -DestinationPath ../out/aiy-windows-standalone.zip
-          cd ..
-      - name: Install pynsist
-        run: |
-          pip install pynsist
       - name: Build Windows-Installer
         run: |
           cp resources/install/win/installer.cfg installer.cfg
@@ -43,8 +43,8 @@ jobs:
         with:
           name: Windows Binary
           path: out/aiy-windows-installer.exe
-      - name: Upload Release Windows
-        uses: actions/upload-artifact@v3
-        with:
-          name: Windows Binary
-          path: out/aiy-windows-standalone.zip
+#      - name: Upload Release Windows
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: Windows Binary
+#          path: out/aiy-windows-standalone.zip
