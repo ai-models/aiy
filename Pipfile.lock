@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "653969fc755d0a432a1d7b8cce76c7fa744e3c26310bfa9aac210217630ea602"
+            "sha256": "9884abe693bab5a60047a5fb1e93f3372f225c5a5d24bb4ad27643793aadbfdc"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -356,14 +356,6 @@
             "markers": "python_version >= '3.6'",
             "version": "==2.14.0"
         },
-        "python-dotenv": {
-            "hashes": [
-                "sha256:1c93de8f636cde3ce377292818d0e440b6e45a82f215c3744979151fa8151c49",
-                "sha256:41e12e0318bebc859fcc4d97d4db8d20ad21721a6aa5047dd59f090391cb549a"
-            ],
-            "index": "pypi",
-            "version": "==0.21.1"
-        },
         "requests": {
             "hashes": [
                 "sha256:64299f4909223da747622c030b781c0d7811e359c37124b4bd368fb8c6518baa",
@@ -559,11 +551,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:883131c5b6efa70b9101c7ef30b2b7b780a4283d5fc1616383cdf22c83cbefe6",
-                "sha256:9d790961ba6219e9ff7d9557622d2fe136816a264dd01d5997cfc057d804853d"
+                "sha256:a7687c12b444eaac951ea87a9627c4f904ac757e7abdc5aac32833234af90378",
+                "sha256:e261cdf010c11a41cb5cb5f1bf3338a7433832029f559a6a7614bd42a967c300"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==67.0.0"
+            "version": "==67.1.0"
         },
         "urllib3": {
             "hashes": [

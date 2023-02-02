@@ -6,7 +6,6 @@ name = "pypi"
 [packages]
 openai = "*"
 rich = "*"
-python-dotenv = "*"
 appdirs = "*"
 
 [dev-packages]
