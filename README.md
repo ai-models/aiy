@@ -19,7 +19,7 @@ Requirements
 Quick Start
 -----------
 # Setup
-1. Clone repository `git clone https://github.com/visioninit.aiy.git'
+1. Clone repository `git clone https://github.com/visioninit/aiy.git'
 2. Change directory `cd aiy`
 3. Install dependencies `pipenv install` (or `pip install -r requirements.txt`)
 4. Configure and rename .env `mv .env.default .env` (env is not required)
