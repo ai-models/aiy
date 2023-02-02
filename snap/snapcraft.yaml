@@ -20,4 +20,4 @@ parts:
     plugin: python
     source: ../.
     python-requirements:
-      - requirements.txt
+      - ../requirements.txt
