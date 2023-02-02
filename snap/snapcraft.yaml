@@ -6,17 +6,13 @@ description: |
   Get technical information on the command line with ease using AIY. Simply type in your question as the prompt and 
   receive a beautifully formatted and helpful response. This snap also has options for resetting the API key and 
   toggling warnings. 
-
+architectures:
+  - build-on: [amd64]
 grade: devel
 confinement: devmode
 
+
 parts:
-  python3:
-    plugin: python
-    source: https://github.com/python/cpython
-  aiy-part:
+  aiyy-part:
     plugin: python
     source: ../.
-    build-packages:
-      - python3-dev
-    after: [ python3 ]
