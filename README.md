@@ -1,7 +1,6 @@
 AIY - Command Line Assistant with OpenAI
 ========================================
-<img src="https://user-images.githubusercontent.com/654993/216195116-931ab643-b945-4076-98f0-2aef834bec85.png" width="500">
-
+![image](https://user-images.githubusercontent.com/654993/216212025-5e9e6725-b042-4010-8f4d-649706565b80.png)
 
 AIY is a simple command line tool that uses OpenAI's language model to provide a documentation-like experience to users. With AIY, users can get answers to their technical questions and receive step-by-step guidance to complete tasks.
 
@@ -48,6 +47,11 @@ For example:
 If you have added the script to your path, you can run it from anywhere:
 
 `aiy "How to install and run a web server on Ubuntu?"`
+
+<img src="https://user-images.githubusercontent.com/654993/216195116-931ab643-b945-4076-98f0-2aef834bec85.png" width="500">
+
+![image](https://user-images.githubusercontent.com/654993/216211945-068bb6a6-b937-44ae-a09c-b75aa8f4d9d6.png)
+![image](https://user-images.githubusercontent.com/654993/216211997-167f131f-023b-4b90-8f06-fc7a0e377f6b.png)
 
 Options
 -------
