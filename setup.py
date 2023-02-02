@@ -24,7 +24,7 @@ setup(
         "platform",
         "sys",
         "resources",
-        "condiut"
+        "conduit"
     ],
     entry_points={
         "console_scripts": [
