@@ -18,10 +18,5 @@ apps:
 parts:
   aiyy-part:
     plugin: python
-    source: ../.
-    python-packages:
-      - wheel
-      - pip
-      - openai==0.26.4
-      - python-dotenv==0.21.1
-      - rich==13.3.1
+    source: https://github.com/visioninit/aiy.git
+    source-type: git
