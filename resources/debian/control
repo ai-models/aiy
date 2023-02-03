@@ -1,7 +1,7 @@
 Source: aiy
 Section: science
 Priority: optional
-Maintainer: Daniel Leidert <dleidert@debian.org>
+Maintainer: Justin Riddiough <jriddiough@gmail.com>
 Build-Depends: debhelper-compat (= 12)
 Standards-Version: 4.6.0
 Homepage: https://aimodels.org/
@@ -15,4 +15,4 @@ Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
          ${shlibs:Depends}
 Description: Aiy - AI Assistant
- Get quick assistance in the command line
+ aiy is a powerful command-line tool that utilizes AI models to solve technical questions

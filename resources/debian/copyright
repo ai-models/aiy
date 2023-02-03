@@ -1,10 +1,10 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: AI Model Manager
+Upstream-Name: Aiy
 Upstream-Contact: https://aimodels.org/
-Source: https://github.com/visioninit/aimm
+Source: https://github.com/visioninit/aiy
 Comment: The binary file is created via pyinstaller and ships copies of
  multiple PyPi modules, released under various OSS licenses. Please refer
- to the output of `aimm --license` for a full list of licenses.
+ to the output of `aiy --license` for a full list of licenses.
 
 Files: *
 Copyright: 2022, Justin Riddiough (VisionInit)
@@ -23,7 +23,7 @@ License: Apache-2.0
 Comment: The full text of the Apache 2.0 license can be found in the
  file '/usr/share/common-licenses/Apache-2.0'.
 
-Files: icons/*
+Files: resources/icons/*
 Copyright: 2022, Justin Riddiough (VisionInit)
 License: other
  Logos and images are not licensed under Apache 2.0 License. Please ask
