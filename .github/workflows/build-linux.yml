@@ -19,6 +19,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pyinstaller
+      - name: Build Linux Binary
+        run: |
+          pyinstaller --onefile aiy.py ---name aiy --distpath dist/
+          cp LICENSE dist/
+          mkdir out && cd dist && tar -zcvf ../out/aimm-linux-binary.tar.gz *
       - name: Generate change log
         run: |
           git clone https://github.com/visioninit/aiy
@@ -27,7 +32,6 @@ jobs:
           cp changelog.txt ..
           cd ..
           mkdir dist
-#          cp changelog.txt dist/
       - name: set package version
         run: |
           echo "***************************************"
@@ -47,4 +51,4 @@ jobs:
         with:
           name: Linux Binary
           path: |
-            out/*.deb
+            out/*
