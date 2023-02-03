@@ -13,7 +13,7 @@ confinement: devmode
 
 apps:
   aiyy:
-    command: $SNAP/bin/aiy
+    command: aiy
 
 parts:
   aiyy-part:
