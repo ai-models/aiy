@@ -1,27 +1,31 @@
 #!/usr/bin/env python3
 import argparse
+import os
 import platform
 import sys
 
-from rich.prompt import Prompt
 from rich.console import Console
 from rich.markdown import Markdown
+from rich.prompt import Prompt
 
 from resources import config
 from resources.conduit import get_completion
 
 console = Console()
+version = "0.2.0"
 
 
 def pre_completion(user_input):
     os_name = platform.platform()
     os_arch = platform.architecture()[0]
     user_input = f"OS: {os_name}\n" \
-             f"Architecture: {os_arch}\n" \
-             f"User question: {user_input}\n\n" \
-             f"Please provide a concise response with possible solutions to the user's question. " \
-             f"Response format: advanced Markdown, left-aligned headers, 80 characters per line.\n\n"
+                 f"Architecture: {os_arch}\n" \
+                 f"User question: {user_input}\n\n" \
+                 f"Please provide a concise response with possible solutions to the user's question. " \
+                 f"Response format: advanced Markdown, left-aligned headers, 80 characters per line.\n\n"
     return user_input
+
+
 def post_completion(openai_response):
     if config.get_expert_mode() != "true":
         openai_response += '\n\n[Notice] OpenAI\'s models have limited knowledge after 2020. Commands and versions' \
@@ -33,8 +37,29 @@ def post_completion(openai_response):
     # print("")
     return openai_response
 
+
 def main():
-    parser = argparse.ArgumentParser(prog="aiy - CLI assistant", description='A quick and handy way to get technical information on the command line', epilog='Made with <3 by Justin Riddiough')
+    desc = "This tool sends a query to OpenAI from the command line and is used to resolve\n" \
+           " technical questions that a user might encounter while working in the shell or CLI \n" \
+           " environment.\n\n" \
+           "The query contains information about your OS and architecture, as well as the\n" \
+           " question you asked to ensure that the responses are tailored to your system.\n\n" \
+           "System information: \n" \
+           "  Kernel:\t" + platform.platform() + "\n" \
+           "  OS:    \t" + os.uname().version + "\n" \
+           "  Shell: \t" + os.environ.get("SHELL", "").split("/")[-1] + "\n\n" \
+           "Report any issues at: https://github.com/visioninit/aiy/issues"
+    epilog = "Please note that the responses from OpenAI's API are not guaranteed to be accurate and " \
+            "use of the tool is at your own risk.\n" \
+            "Made with <3 by Justin Riddiough"
+
+    # Create an ArgumentParser object
+    parser = argparse.ArgumentParser(prog='aiy - CLI assistant',
+                                     formatter_class=argparse.RawTextHelpFormatter,
+                                     description=desc,
+                                     epilog=epilog)
+
+    # Add arguments for expert mode, API key reset, version, and prompt
     parser.add_argument('-x', '--expert', action="store_true", help='Toggle warning', dest='expert')
     parser.add_argument('-i', '--key', action="store_true", help='Reset API key', dest='apikey')
     parser.add_argument('-v', '--version', action="store_true", help='Get Version', dest='version')
@@ -42,7 +67,7 @@ def main():
     args = parser.parse_args()
 
     if args.version:
-        console.print("aiy version: 0.1.0")
+        console.print("aiy version: " + version)
         sys.exit()
     config.check_config(console)
     if args.apikey:
@@ -63,6 +88,7 @@ def main():
     with console.status(f"Phoning a friend...  ", spinner="pong"):
         openai_response = post_completion(get_completion(prompt))
         console.print(Markdown(openai_response.strip()))
+
 
 if __name__ == "__main__":
     main()

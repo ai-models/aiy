@@ -1,10 +1,23 @@
 import getpass
 import os
+import platform
+import re
+import subprocess
 import sys
 
 import appdirs
 from rich.prompt import Prompt
 
+def user_data(type):
+    if type == "bash":
+        result = subprocess.run(['bash', '--version'], stdout=subprocess.PIPE)
+        output = result.stdout.decode('utf-8')
+        match = re.search(r'GNU bash, version ([\d.]+)', output)
+        if match:
+            version = match.group(1)
+            print(f"The version of bash is: {version}")
+        else:
+            print("Could not determine the version of bash")
 
 def prompt_new_key():
     apikey_new = Prompt.ask("OpenAI API Key (hidden)", password=True)
@@ -17,12 +30,26 @@ def prompt_new_key():
 
 def check_config(console):
     if not get_api_key():
-        console.print("[ERROR] OpenAI API key not found. Please follow these steps to get the API key:\n"
-                      "\t1. Go to OpenAI website (https://openai.com/api/login)\n"
-                      "\t2. Sign up or log into your account\n"
-                      "\t3. Go to the API Key section (https://platform.openai.com/account/api-keys)\n"
-                      "\t4. Create a New Secret Key\n"
-                      "\t4. Copy the API key\n")
+        os_name = str(os.name)
+        os_uname = os.uname()
+
+        console.print("--[Aiy - CLI Assistant]-------\n"
+                      "\n"
+                      "OpenAI API key not found. Please follow these steps to get the API key:\n"
+                      "  1. Go to OpenAI website (https://openai.com/api/login)\n"
+                      "  2. Sign up or log into your account\n"
+                      "  3. Go to the API Key section (https://platform.openai.com/account/api-keys)\n"
+                      "  4. Create a New Secret Key\n"
+                      "  4. Copy the API key\n"
+                      "\n"
+                      "The queries sent to OpenAI contain your OS and architecture information, as well as the "
+                      "question you asked. This is so that responses will be catered to you as much as possible\n"
+                      "Example:\n"
+                      "  " + platform.platform() + "\n"
+                      "  " + os_uname.version + "\n"
+                      "  " + os.environ.get("SHELL", "").split("/")[-1] + "\n"
+                      "Please be advised that responses from OpenAI's API are not guaranteed to be accurate. "
+                      "Use at your own risk.\n")
         key = prompt_new_key()
         set_api_key(key)
     if not get_model():

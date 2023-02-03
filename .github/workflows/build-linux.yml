@@ -50,4 +50,10 @@ jobs:
         with:
           name: Linux Binary
           path: |
-            out/*
+            out/aiy-linux-binary.tar.gz
+            - name: Upload Release Linux
+        uses: actions/upload-artifact@v3
+        with:
+          name: Linux .deb
+          path: |
+            out/aiy-linux-installer.deb
