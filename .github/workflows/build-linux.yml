@@ -26,6 +26,7 @@ jobs:
         run: |
           git clone https://github.com/visioninit/aiy
           cd aiy
+          mv -f resources/debian ../. 
           git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:' * %s' | sed '/Merge/d' > changelog.txt
           cp changelog.txt ..
           cd ..
@@ -40,7 +41,6 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install -y dpkg-dev devscripts
           sudo apt-get build-dep -y --no-install-recommends .
-          mv -f resources/debian . 
           dch --newversion $DEBIAN_PACKAGE_VERSION -D unstable -m 'Build Debian package.'
           debuild -b -us -uc
           mv ../*.deb out/aiy-linux-installer.deb
