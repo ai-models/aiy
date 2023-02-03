@@ -1,23 +1,10 @@
-import getpass
 import os
 import platform
-import re
-import subprocess
 import sys
 
 import appdirs
 from rich.prompt import Prompt
 
-def user_data(type):
-    if type == "bash":
-        result = subprocess.run(['bash', '--version'], stdout=subprocess.PIPE)
-        output = result.stdout.decode('utf-8')
-        match = re.search(r'GNU bash, version ([\d.]+)', output)
-        if match:
-            version = match.group(1)
-            print(f"The version of bash is: {version}")
-        else:
-            print("Could not determine the version of bash")
 
 def prompt_new_key():
     apikey_new = Prompt.ask("OpenAI API Key (hidden)", password=True)
@@ -30,7 +17,6 @@ def prompt_new_key():
 
 def check_config(console):
     if not get_api_key():
-        os_name = str(os.name)
         os_uname = os.uname()
 
         console.print("--[Aiy - CLI Assistant]-------\n"
@@ -66,7 +52,6 @@ def _get_config(key):
         for line in f.readlines():
             if line.startswith(f"{key}="):
                 return line.split("=")[1].strip()
-
 
 
 def _update_config(key, value):
