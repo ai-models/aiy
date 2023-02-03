@@ -19,5 +19,7 @@ parts:
   aiyy-part:
     plugin: python
     source: ../.
-    python-requirements:
-      - $SNAP/requirements.txt
+    python-packages:
+      - openai==0.26.4
+      - python-dotenv==0.21.1
+      - rich==13.3.1
