@@ -40,14 +40,17 @@ def post_completion(openai_response):
 
 def main():
     desc = "This tool sends a query to OpenAI from the command line and is used to resolve\n" \
-           " technical questions that a user might encounter while working in the shell or CLI \n" \
-           " environment.\n\n" \
+           "technical questions that a user might encounter while working in the shell or CLI \n" \
+           "environment.\n\n" \
+           "  Example: aiy 'how to install a package in python'\n" \
+           "           aiy 'how do I search for a file or directory'\n" \
+           "           aiy 'what is the command to find the files firefox has open'\n\n" \
            "The query contains information about your OS and architecture, as well as the\n" \
-           " question you asked to ensure that the responses are tailored to your system.\n\n" \
-           "System information: \n" \
-           "  Kernel:\t" + platform.platform() + "\n" \
-           "  OS:    \t" + os.uname().version + "\n" \
-           "  Shell: \t" + os.environ.get("SHELL", "").split("/")[-1] + "\n\n" \
+           "question you asked to ensure that the responses are tailored to your system.\n\n" \
+           "  System information: \n" \
+           "    Kernel:\t" + platform.platform() + "\n" \
+           "    OS:    \t" + os.uname().version + "\n" \
+           "    Shell: \t" + os.environ.get("SHELL", "").split("/")[-1] + "\n\n" \
            "Report any issues at: https://github.com/visioninit/aiy/issues"
     epilog = "Please note that the responses from OpenAI's API are not guaranteed to be accurate and " \
             "use of the tool is at your own risk.\n" \
