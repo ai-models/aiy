@@ -21,7 +21,7 @@ jobs:
           pip install pyinstaller
       - name: Build Linux Binary
         run: |
-          pyinstaller --onefile aiy.py ---name aiy --distpath dist/
+          pyinstaller --onefile aiy.py --name aiy --distpath dist/
           cp LICENSE dist/
           mkdir out && cd dist && tar -zcvf ../out/aimm-linux-binary.tar.gz *
       - name: Generate change log
