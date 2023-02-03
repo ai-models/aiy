@@ -13,13 +13,12 @@ confinement: devmode
 
 apps:
   aiyy:
-    command: bin/aiy
+    command: /bin/aiy
 
 parts:
   aiyy-part:
     plugin: python
-    source: https://github.com/visioninit/aiy.git
-    source-type: git
+    source: ../.
     python-packages:
       - wheel
       - pip
