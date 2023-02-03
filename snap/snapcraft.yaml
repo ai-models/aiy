@@ -13,7 +13,7 @@ confinement: devmode
 
 apps:
   aiyy:
-    command: aiy
+    command: bin/aiy
 
 parts:
   aiyy-part:
