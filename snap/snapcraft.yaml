@@ -1,6 +1,6 @@
 name: aiyy
 base: core22
-version: '0.1'
+version: '0.2'
 summary: CLI assistant for technical information
 description: |
   Get technical information on the command line with ease using AIY. Simply type in your question as the prompt and 
