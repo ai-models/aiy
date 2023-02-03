@@ -40,11 +40,11 @@ def main():
     parser.add_argument('-v', '--version', action="store_true", help='Get Version', dest='version')
     parser.add_argument('prompt', type=str, nargs='?', help='Prompt to send')
     args = parser.parse_args()
-    config.check_config(console)
 
     if args.version:
         console.print("aiy version 0.1.0")
         sys.exit()
+    config.check_config(console)
     if args.apikey:
         config.prompt_new_key()
         sys.exit()
