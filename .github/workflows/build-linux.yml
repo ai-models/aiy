@@ -21,7 +21,7 @@ jobs:
         run: |
           pyinstaller --onefile aiy.py --name aiy --distpath dist/
           cp LICENSE dist/
-          mkdir out && cd dist && tar -zcvf ../out/aimm-linux-binary.tar.gz *
+          mkdir out && cd dist && tar -zcvf ../out/aiy-linux-binary.tar.gz *
       - name: Generate change log
         run: |
           git clone https://github.com/visioninit/aiy
