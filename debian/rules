@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+# export DH_VERBOSE=1
+
+%:
+	dh $@ --buildsystem=none
+
+override_dh_builddeb:
+	dh_builddeb -- -Zgzip
+
+override_dh_installchangelogs:
+	dh_installchangelogs changelog.txt

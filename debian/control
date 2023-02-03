@@ -1,0 +1,18 @@
+Source: aiy
+Section: science
+Priority: optional
+Maintainer: Daniel Leidert <dleidert@debian.org>
+Build-Depends: debhelper-compat (= 12)
+Standards-Version: 4.6.0
+Homepage: https://aimodels.org/
+Vcs-Browser: https://github.com/visioninit/aiy
+Vcs-Git: https://github.com/visioninit/aiy.git
+Rules-Requires-Root: binary-targets
+
+Package: aiy
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: Aiy - AI Assistant
+ Get quick assistance in the command line

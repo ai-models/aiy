@@ -37,10 +37,14 @@ def main():
     parser = argparse.ArgumentParser(prog="aiy - CLI assistant", description='A quick and handy way to get technical information on the command line', epilog='Made with <3 by Justin Riddiough')
     parser.add_argument('-x', '--expert', action="store_true", help='Toggle warning', dest='expert')
     parser.add_argument('-i', '--key', action="store_true", help='Reset API key', dest='apikey')
+    parser.add_argument('-v', '--version', action="store_true", help='Get Version', dest='version')
     parser.add_argument('prompt', type=str, nargs='?', help='Prompt to send')
     args = parser.parse_args()
     config.check_config(console)
 
+    if args.version:
+        console.print("aiy version 0.1.0")
+        sys.exit()
     if args.apikey:
         config.prompt_new_key()
         sys.exit()
