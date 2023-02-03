@@ -31,7 +31,7 @@ def post_completion(openai_response):
                            'To disable this notice, switch to expert mode with `aiy --expert`.'
     # print(openai_response)
     # print("")
-    console.print(Markdown(openai_response.strip(), justify="left"), justify="left", markup=True)
+    return openai_response
 
 def main():
     parser = argparse.ArgumentParser(prog="aiy - CLI assistant", description='A quick and handy way to get technical information on the command line', epilog='Made with <3 by Justin Riddiough')
@@ -57,7 +57,8 @@ def main():
         prompt = pre_completion(args.prompt)
 
     with console.status(f"Phoning a friend...  ", spinner="pong"):
-        post_completion(get_completion(prompt))
+        openai_response = post_completion(get_completion(prompt))
+        console.print(Markdown(openai_response.strip()))
 
 if __name__ == "__main__":
     main()

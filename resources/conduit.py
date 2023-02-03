@@ -16,7 +16,7 @@ def get_completion(prompt):
         response = openai.Completion.create(
             engine=engine,
             prompt=prompt,
-            max_tokens=1024,
+            max_tokens=4000,
             n=1,
             stop=None,
             temperature=0.5,
@@ -35,4 +35,5 @@ def get_completion(prompt):
         sys.exit()
     except openai.error.OpenAIError as e:
         print(f"OpenAI API returned an error: {e}")
+        sys.exit()
     return response
