@@ -42,7 +42,7 @@ def main():
     args = parser.parse_args()
 
     if args.version:
-        console.print("aiy version 0.1.0")
+        console.print("aiy version: 0.1.0")
         sys.exit()
     config.check_config(console)
     if args.apikey:
