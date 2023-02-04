@@ -26,10 +26,10 @@ jobs:
         run: |
           git clone https://github.com/visioninit/aiy
           cd aiy
-          mv -f resources/debian ../. 
           git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:' * %s' | sed '/Merge/d' > changelog.txt
           cp changelog.txt ..
           cd ..
+          rm -fr aiy
       - name: set package version
         run: |
           echo "***************************************"
@@ -40,6 +40,7 @@ jobs:
         run: |
           sudo apt-get update -y
           sudo apt-get install -y dpkg-dev devscripts
+          mv resources/debian . 
           sudo apt-get build-dep -y --no-install-recommends .
           dch --newversion $DEBIAN_PACKAGE_VERSION -D unstable -m 'Build Debian package.'
           debuild -b -us -uc
