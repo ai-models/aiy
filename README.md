@@ -2,11 +2,22 @@ AIY - Command Line Assistant with OpenAI
 ========================================
 ![image](https://user-images.githubusercontent.com/654993/216212025-5e9e6725-b042-4010-8f4d-649706565b80.png)
 
-AIY is a simple command line tool that uses OpenAI's language model to provide a documentation-like experience to users. With AIY, users can get answers to their technical questions and receive step-by-step guidance to complete tasks.
+AIY is a command line tool that uses OpenAI's language model to provide a documentation-like experience to users. With AIY, users can get answers to their technical questions and receive step-by-step guidance to complete tasks.
 
 Disclaimer: This is not an official OpenAI product, and is not endorsed by OpenAI. It's a personal project that I created to learn more about OpenAI's language model.
 
 If your organization appreciates this project or is looking for someone to help with your systems and infrastructure, please reach out to me at [LinkedIn](https://www.linkedin.com/in/riddiough/).
+
+
+Install in Ubuntu / Debian: 
+---------------
+
+```
+wget -O- https://ppa.aimodels.org/aiy/aimodels.gpg | gpg --dearmor | sudo tee /etc/apt/keyrings/aimodels.gpg > /dev/null
+sudo wget -qO- /etc/apt/sources.list.d/aimodels.list https://ppa.aimodels.org/aiy/aimodels.list
+sudo apt update
+sudo apt install aiy
+```
 
 Requirements
 ------------
@@ -15,6 +26,7 @@ Requirements
 *   OpenAI API Key
 *   Rich library (install via `pip install rich`)
 *   dotenv library (install via `pip install python-dotenv`)
+
 
 Quick Start
 -----------
