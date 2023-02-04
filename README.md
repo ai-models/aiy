@@ -45,7 +45,7 @@ Configuration
 4.  Go to the API Key section ([https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys))
 5.  Create a new secret key
 6.  Copy the API key
-7.  Set your OpenAI API Key in your .env file
+7.  When running Aiy the first time, you will be prompted for your key
 
 Usage
 -----
@@ -66,10 +66,9 @@ If you have added the script to your path, you can run it from anywhere:
 Options
 -------
 
+* If you wish, you can override automated settings by use of .env file
 * You can set the OpenAI model to use by setting the `OPENAI_MODEL` environment variable in your .env file.
-
 * You can disable the notice that is displayed at the end of the response by setting the `OPENAI_DISABLE_NOTICE` environment variable in your .env file.
-
 
 Contributing
 ------------
