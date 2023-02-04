@@ -16,25 +16,23 @@ version = "0.2.0"
 
 
 def pre_completion(user_input):
-    os_name = platform.platform()
-    os_arch = platform.architecture()[0]
-    user_input = f"OS: {os_name}\n" \
-                 f"Architecture: {os_arch}\n" \
+    user_input = "Users Kernel:" + platform.platform() + "\n" \
+                 "Users OS:" + os.uname().version + "\n" \
+                 "Users Shell:" + os.environ.get("SHELL", "").split("/")[-1] + "\n\n" \
                  f"User question: {user_input}\n\n" \
-                 f"Please provide a concise response with possible solutions to the user's question. " \
-                 f"Response format: advanced Markdown, left-aligned headers, 80 characters per line.\n\n"
+                 f"Please provide a concise response to the user's question. Where appropriate provide commands or " \
+                 f"code examples with descriptions. Unless specified otherwise assume the kernel, OS, and shell " \
+                 f"information provides context for the users question.\n " \
+                 f"Response Format: Markdown\n\n"
     return user_input
 
 
 def post_completion(openai_response):
     if config.get_expert_mode() != "true":
+        openai_response = f"> Aiy v{version}\n\n" + openai_response
         openai_response += '\n\n[Notice] OpenAI\'s models have limited knowledge after 2020. Commands and versions' \
-                           'may be outdated.' \
-                           'Command recommendations are not guaranteed to work and may be dangerous. Use at your own' \
-                           'risk.\n' \
+                           'may be outdated. Recommendations are not guaranteed to work and may be dangerous.' \
                            'To disable this notice, switch to expert mode with `aiy --expert`.'
-    # print(openai_response)
-    # print("")
     return openai_response
 
 
