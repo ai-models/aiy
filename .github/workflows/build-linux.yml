@@ -44,7 +44,7 @@ jobs:
           sudo apt-get build-dep -y --no-install-recommends .
           dch --newversion $DEBIAN_PACKAGE_VERSION -D unstable -m 'Build Debian package.'
           debuild -b -us -uc
-          mv ../*.deb out/aiy-linux-installer.deb
+          mv ../*.deb out/.
       - name: Upload Linux Binary
         uses: actions/upload-artifact@v3
         with:
@@ -56,4 +56,4 @@ jobs:
         with:
           name: Linux .deb
           path: |
-            out/aiy-linux-installer.deb
+            out/*.deb
