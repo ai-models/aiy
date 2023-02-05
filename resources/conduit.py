@@ -9,14 +9,19 @@ def get_completion(prompt):
     engine = config.get_model()
 
     if prompt is None:
-        print("Prompt is None")
-    # print (f"Prompt: {prompt}")
-    # print(f"Engine: {engine}")
+        print("Prompt is empty. Please enter a prompt.")
+
+    # token calculator
+    # count characters in prompt
+    tokens_prompt = len(prompt) / 4
+    max_tokens = int(4000 - tokens_prompt)
+    # print(f"Max tokens: {max_tokens}")
+    # print(f"Tokens in prompt: {tokens_prompt}")
     try:
         response = openai.Completion.create(
             engine=engine,
             prompt=prompt,
-            max_tokens=2000,
+            max_tokens=max_tokens,
             n=1,
             stop=None,
             temperature=0.7,
