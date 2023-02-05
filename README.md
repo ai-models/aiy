@@ -9,15 +9,7 @@ Disclaimer: This is not an official OpenAI product, and is not endorsed by OpenA
 If your organization appreciates this project or is looking for someone to help with your systems and infrastructure, please reach out to me at [LinkedIn](https://www.linkedin.com/in/riddiough/).
 
 
-Install in Ubuntu / Debian: 
----------------
-
-```
-wget -O- https://ppa.aimodels.org/aiy/visioninit-repo.gpg | gpg --dearmor | sudo tee /etc/apt/keyrings/visioninit-repo.gpg > /dev/null
-sudo wget -qO /etc/apt/sources.list.d/aimodels.list https://ppa.aimodels.org/aiy/aimodels.list
-sudo apt update
-sudo apt install aiy
-```
+( Anyone who might be able to help me get this set up with a snap or flatpack? I've been working on trying to set up these workflows )
 
 Requirements
 ------------
