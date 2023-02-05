@@ -13,7 +13,7 @@ Install in Ubuntu / Debian:
 ---------------
 
 ```
-wget -O- https://ppa.aimodels.org/aiy/aimodels.gpg | gpg --dearmor | sudo tee /etc/apt/keyrings/aimodels.gpg > /dev/null
+wget -O- https://ppa.aimodels.org/aiy/visioninit-repo.gpg | gpg --dearmor | sudo tee /etc/apt/keyrings/visioninit-repo.gpg > /dev/null
 sudo wget -qO- /etc/apt/sources.list.d/aimodels.list https://ppa.aimodels.org/aiy/aimodels.list
 sudo apt update
 sudo apt install aiy
