@@ -37,7 +37,7 @@ echo 'deb [signed-by=/usr/share/keyrings/visioninit.gpg] https://ppa.aimodels.or
   sudo tee -a /etc/apt/sources.list.d/aimodels.list
 ```
   
-#### 3. Update your package database and install signal
+#### 3. Update your package database and install aiy
 
 ```sudo apt update && sudo apt install aiy```
 
