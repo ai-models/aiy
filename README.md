@@ -1,48 +1,14 @@
-AIY - Command Line Assistant with OpenAI
+AIY - Ask question from bash shell and get tailored documentation response 
 ========================================
 ![image](https://user-images.githubusercontent.com/654993/216212025-5e9e6725-b042-4010-8f4d-649706565b80.png)
 
-AIY is a command line tool that uses OpenAI's language model to provide a documentation-like experience to users. With AIY, users can get answers to their technical questions and receive step-by-step guidance to complete tasks.
-
-Disclaimer: This is not an official OpenAI product, and is not endorsed by OpenAI. It's a personal project that I created to learn more about OpenAI's language model.
+AIY is a command line tool that uses OpenAI's language model to provide a documentation-like experience to users. With Aiy, users can get answers to their technical questions and receive step-by-step guidance to complete tasks.
 
 If your organization appreciates this project or is looking for someone to help with your systems and infrastructure, please reach out to me at [LinkedIn](https://www.linkedin.com/in/riddiough/).
 
-Install on Debian based systems (Debain, Mint, Ubuntu)
--------------------
 
-### 1. Install our official public software signing key
-wget -O- https://ppa.aimodels.org/aiy/visioninit.gpg | gpg --dearmor > visioninit.gpg
-cat visioninit.gpg | sudo tee -a /usr/share/keyrings/visioninit.gpg > /dev/null
-
-### 2. Add our repository to your list of repositories
-echo 'deb [signed-by=/usr/share/keyrings/visioninit.gpg] https://ppa.aimodels.org/aiy ./' |\
-  sudo tee -a /etc/apt/sources.list.d/aimodels.list
-  
-### 3. Update your package database and install signal
-sudo apt update && sudo apt install aiy
-
-( Anyone who might be able to help me get this set up with a snap or flatpack? I've been working on trying to set up these workflows )
-
-Requirements
-------------
-
-*   Python 3
-*   OpenAI API Key
-*   Rich library (install via `pip install rich`)
-*   dotenv library (install via `pip install python-dotenv`)
-
-
-Quick Start
------------
-# Setup
-1. Clone repository `git clone https://github.com/visioninit/aiy.git'
-2. Change directory `cd aiy`
-3. Install dependencies `pipenv install` (or `pip install -r requirements.txt`)
-4. Configure and rename .env `mv .env.default .env` (env is not required)
-
-Configuration
----------------
+<details>
+  <summary>Get API Key from OpenAI</summary>
 
 1.  Get your OpenAI API Key:
 2.  Go to OpenAI's website ([https://openai.com/api/login](https://openai.com/api/login))
@@ -51,6 +17,48 @@ Configuration
 5.  Create a new secret key
 6.  Copy the API key
 7.  When running Aiy the first time, you will be prompted for your key
+  
+</details>
+
+Install on Debian based systems (Debain, Mint, Ubuntu)
+-------------------
+
+#### 1. Install our official public software signing key
+
+```
+wget -O- https://ppa.aimodels.org/aiy/visioninit.gpg | gpg --dearmor > visioninit.gpg
+cat visioninit.gpg | sudo tee -a /usr/share/keyrings/visioninit.gpg > /dev/null
+```
+
+#### 2. Add our repository to your list of repositories
+
+```
+echo 'deb [signed-by=/usr/share/keyrings/visioninit.gpg] https://ppa.aimodels.org/aiy ./' |\
+  sudo tee -a /etc/apt/sources.list.d/aimodels.list
+```
+  
+#### 3. Update your package database and install signal
+
+```sudo apt update && sudo apt install aiy```
+
+( Anyone who might be able to help me get this set up with a snap or flatpack? I've been working on trying to set up these workflows )
+
+Quick Start
+-----------
+
+1. Clone repository `git clone https://github.com/visioninit/aiy.git'
+2. Change directory `cd aiy`
+3. Install dependencies `pip install -r requirements.txt`
+4. Run `python aiy` and enter OpenAI key as prompted to complete setup
+5. Prompt with `python aiy` or `python aiy "how do I..."` 
+
+Python Requirements
+------------
+
+*   Python 3
+*   OpenAI API Key
+*   Rich library (install via `pip install rich`)
+*   dotenv library (install via `pip install python-dotenv`)
 
 Usage
 -----
