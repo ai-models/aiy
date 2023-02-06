@@ -8,6 +8,19 @@ Disclaimer: This is not an official OpenAI product, and is not endorsed by OpenA
 
 If your organization appreciates this project or is looking for someone to help with your systems and infrastructure, please reach out to me at [LinkedIn](https://www.linkedin.com/in/riddiough/).
 
+Install on Debian based systems (Debain, Mint, Ubuntu)
+-------------------
+
+# 1. Install our official public software signing key
+wget -O- https://ppa.aimodels.org/aiy/visioninit.gpg | gpg --dearmor > visioninit.gpg
+cat visioninit.gpg | sudo tee -a /usr/share/keyrings/visioninit.gpg > /dev/null
+
+# 2. Add our repository to your list of repositories
+echo 'deb [signed-by=/usr/share/keyrings/visioninit.gpg] https://ppa.aimodels.org/aiy ./' |\
+  sudo tee -a /etc/apt/sources.list.d/aimodels.list
+  
+# 3. Update your package database and install signal
+sudo apt update && sudo apt install aiy
 
 ( Anyone who might be able to help me get this set up with a snap or flatpack? I've been working on trying to set up these workflows )
 
