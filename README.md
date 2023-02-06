@@ -52,13 +52,14 @@ Quick Start
 4. Run `python aiy` and enter OpenAI key as prompted to complete setup
 5. Prompt with `python aiy` or `python aiy "how do I..."` 
 
-Python Requirements
-------------
+<details>
+  <summary>Python Requirements</summary>
 
 *   Python 3
 *   OpenAI API Key
 *   Rich library (install via `pip install rich`)
-*   dotenv library (install via `pip install python-dotenv`)
+
+</details>
 
 Usage
 -----
