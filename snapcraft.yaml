@@ -13,15 +13,17 @@ confinement: devmode
 
 apps:
   aiyy:
-    command: $SNAP/resources/bin/aiy.sh
+    command: resources/bin/aiy.sh
 
 parts:
   aiyy-part:
     plugin: python
-    source: .
+    source: https://github.com/visioninit/aiy.git
     python-packages:
       - wheel
       - pip
       - openai==0.26.4
-      - python-dotenv==0.21.1
       - rich==13.3.1
+    override-build: |
+      craftctl default
+      install -m755 $CRAFT_PART_SRC/resources/bin/aiy $CRAFT_PART_INSTALL/resources/bin/
