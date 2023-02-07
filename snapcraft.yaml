@@ -16,6 +16,6 @@ apps:
     command: bin/aiyy
 
 parts:
-  aiyy-part:
+  aiyy:
     plugin: python
     source: https://github.com/visioninit/aiy.git
