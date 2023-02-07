@@ -1,0 +1,4 @@
+openai==0.26.4
+appdirs==1.4.4
+rich==13.3.1
+pygments==2.14.0

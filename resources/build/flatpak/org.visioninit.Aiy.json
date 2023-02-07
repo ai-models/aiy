@@ -1,0 +1,39 @@
+{
+    "app-id": "org.visioninit.Aiy",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": '22.08',
+    "sdk": "org.freedesktop.Sdk",
+    "command": "aiy.sh",
+    "finish-args": [
+        "--share=network",
+        "--filesystem=host"
+    ],
+    "modules": [
+        {
+            "name": "aiy",
+            "buildsystem": "simple",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/visioninit/aiy.git",
+                    "branch": "main"
+                }
+            ],
+	    "modules": [
+	        "pypi-dependencies.json",
+	        {
+	            "name": "other-modules"
+	        }
+	    ],
+            "build-commands": [
+                "install -D resources/aiy.sh /app/bin/aiy.sh",
+                "mkdir -p /app/share",
+                "cp -fr . /app/share",
+                "pip3 install openai==0.26.4 appdirs==1.4.4 rich==13.3.1 pygments "
+            ],
+            "cleanup": [
+                "venv"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,143 @@
+{
+    "name": "pypi-dependencies",
+    "buildsystem": "simple",
+    "build-commands": [],
+    "modules": [
+        {
+            "name": "python3-openai",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"openai==0.26.4\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/ff/4f/62d9859b7d4e6dc32feda67815c5f5ab4421e6909e48cbc970b6a40d60b7/aiohttp-3.8.3.tar.gz",
+                    "sha256": "3828fb41b7203176b82fe5d699e0d845435f2374750a44b480ea6b930f6be269"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/76/ac/a7305707cb852b7e16ff80eaf5692309bde30e2b1100a1fcacdc8f731d97/aiosignal-1.3.1-py3-none-any.whl",
+                    "sha256": "f8376fb07dd1e86a584e4fcdec80b36b7f81aac666ebc724e2c090300dd83b17"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/d6/c1/8991e7c5385b897b8c020cdaad718c5b087a6626d1d11a23e1ea87e325a7/async_timeout-4.0.2-py3-none-any.whl",
+                    "sha256": "8ca1e4fcf50d07413d66d1a5e416e42cfdf5851c981d679a09851a6853383b3c"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/fb/6e/6f83bf616d2becdf333a1640f1d463fef3150e2e926b7010cb0f81c95e88/attrs-22.2.0-py3-none-any.whl",
+                    "sha256": "29e95c7f6778868dbd49170f98f8818f78f3dc5e0e37c0b1f474e3561b240836"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/71/4c/3db2b8021bd6f2f0ceb0e088d6b2d49147671f25832fb17970e9b583d742/certifi-2022.12.7-py3-none-any.whl",
+                    "sha256": "4ad3232f5e926d6718ec31cfc1fcadfde020920e278684144551c91769c7bc18"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/db/51/a507c856293ab05cdc1db77ff4bc1268ddd39f29e7dc4919aa497f0adbec/charset_normalizer-2.1.1-py3-none-any.whl",
+                    "sha256": "83e9a75d1911279afd89352c68b45348559d1fc0506b054b346651b5e7fee29f"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/e9/10/d629476346112b85c912527b9080944fd2c39a816c2225413dbc0bb6fcc0/frozenlist-1.3.3.tar.gz",
+                    "sha256": "58bcc55721e8a90b88332d6cd441261ebb22342e238296bb330968952fbb3a6a"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/fc/34/3030de6f1370931b9dbb4dad48f6ab1015ab1d32447850b9fc94e60097be/idna-3.4-py3-none-any.whl",
+                    "sha256": "90b77e79eaa3eba6de819a0c442c0b4ceefc341a7a2ab77d7562bf49f425c5c2"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/4a/15/bd620f7a6eb9aa5112c4ef93e7031bcd071e0611763d8e17706ef8ba65e0/multidict-6.0.4.tar.gz",
+                    "sha256": "3666906492efb76453c0e7b97f2cf459b0682e7402c0489a95484965dbc1da49"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/37/37/eea5ae693a9f95c554ba7665e96a105425d6823782105f2317cb8a2bb8be/openai-0.26.4.tar.gz",
+                    "sha256": "168813319a1422cb71a5005f9e404065483556cea52c9ccbfb838cda134087a7"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/d2/f4/274d1dbe96b41cf4e0efb70cbced278ffd61b5c7bb70338b62af94ccb25b/requests-2.28.2-py3-none-any.whl",
+                    "sha256": "64299f4909223da747622c030b781c0d7811e359c37124b4bd368fb8c6518baa"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/47/bb/849011636c4da2e44f1253cd927cfb20ada4374d8b3a4e425416e84900cc/tqdm-4.64.1-py2.py3-none-any.whl",
+                    "sha256": "6fee160d6ffcd1b1c68c65f14c829c22832bc401726335ce92c52d395944a6a1"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/fe/ca/466766e20b767ddb9b951202542310cba37ea5f2d792dae7589f1741af58/urllib3-1.26.14-py2.py3-none-any.whl",
+                    "sha256": "75edcdc2f7d85b137124a6c3c9fc3933cdeaa12ecb9a6a959f22797a0feca7e1"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/c4/1e/1b204050c601d5cd82b45d5c8f439cb6f744a2ce0c0a6f83be0ddf0dc7b2/yarl-1.8.2.tar.gz",
+                    "sha256": "49d43402c6e3013ad0978602bf6bf5328535c48d192304b91b97a3c6790b1562"
+                }
+            ]
+        },
+        {
+            "name": "python3-appdirs",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"appdirs==1.4.4\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/3b/00/2344469e2084fb287c2e0b57b72910309874c3245463acd6cf5e3db69324/appdirs-1.4.4-py2.py3-none-any.whl",
+                    "sha256": "a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128"
+                }
+            ]
+        },
+        {
+            "name": "python3-rich",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"rich==13.3.1\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/0b/42/d9d95cc461f098f204cd20c85642ae40fbff81f74c300341b8d0e0df14e0/Pygments-2.14.0-py3-none-any.whl",
+                    "sha256": "fa7bd7bd2771287c0de303af8bfdfc731f51bd2c6a47ab69d117138893b82717"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/f9/3f/ecd1b708973b9a3e4574b43cffc1ce8eb98696da34f1a1c44a68c3c0d737/markdown_it_py-2.1.0-py3-none-any.whl",
+                    "sha256": "93de681e5c021a432c63147656fe21790bc01231e0cd2da73626f1aa3ac0fe27"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl",
+                    "sha256": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/a8/c6/14b77fe7a5fab66ffbeffd6706f598d00a52702846bce0e2339bcf9dd20c/rich-13.3.1-py3-none-any.whl",
+                    "sha256": "8aa57747f3fc3e977684f0176a88e789be314a99f99b43b75d1e9cb5dc6db9e9"
+                }
+            ]
+        },
+        {
+            "name": "python3-pygments",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pygments==2.14.0\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/0b/42/d9d95cc461f098f204cd20c85642ae40fbff81f74c300341b8d0e0df14e0/Pygments-2.14.0-py3-none-any.whl",
+                    "sha256": "fa7bd7bd2771287c0de303af8bfdfc731f51bd2c6a47ab69d117138893b82717"
+                }
+            ]
+        }
+    ]
+}
