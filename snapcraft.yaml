@@ -26,4 +26,4 @@ parts:
       - rich==13.3.1
     override-build: |
       craftctl default
-      install -m755 $CRAFT_PART_SRC/resources/bin/aiy $CRAFT_PART_INSTALL/resources/bin/
+      install -m755 $CRAFT_PART_SRC/resources/bin/aiy.sh $CRAFT_PART_INSTALL/resources/bin/
