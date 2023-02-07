@@ -1,5 +1,5 @@
 name: aiyy
-base: core22
+base: core20
 version: '0.2'
 summary: CLI assistant for technical information
 description: |
@@ -13,17 +13,9 @@ confinement: devmode
 
 apps:
   aiyy:
-    command: resources/bin/aiy.sh
+    command: bin/aiy
 
 parts:
   aiyy-part:
     plugin: python
-    source: https://github.com/visioninit/aiy.git
-    python-packages:
-      - wheel
-      - pip
-      - openai==0.26.4
-      - rich==13.3.1
-    override-build: |
-      craftctl default
-      install -m755 $CRAFT_PART_SRC/resources/bin/aiy.sh $CRAFT_PART_INSTALL/resources/bin/
+    source: .
