@@ -15,7 +15,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'aiyy=aiy:main',
+            'aiyy=aiy.aiy:main',
         ],
     },
 )
