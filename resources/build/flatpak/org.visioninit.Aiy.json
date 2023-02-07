@@ -26,7 +26,7 @@
 	        }
 	    ],
             "build-commands": [
-                "install -D resources/aiy.sh /app/bin/aiy.sh",
+                "install -D resources/build/flatpak/aiy.sh /app/bin/aiy.sh",
                 "mkdir -p /app/share",
                 "cp -fr . /app/share",
                 "pip3 install openai==0.26.4 appdirs==1.4.4 rich==13.3.1 pygments "
