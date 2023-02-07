@@ -13,12 +13,12 @@ confinement: devmode
 
 apps:
   aiyy:
-    command: $SNAP/resources/bin/aiy.sh
+    command: resources/bin/aiy.sh
 
 parts:
   aiyy-part:
     plugin: python
-    source: ../.
+    source: .
     python-packages:
       - wheel
       - pip
