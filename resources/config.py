@@ -43,11 +43,9 @@ def check_config(console):
     if not get_expert_mode():
         set_expert_mode("false")
 
-
 def _get_config(key):
     if not os.path.exists(_config_file):
         return None
-
     with open(_config_file, "r") as f:
         for line in f.readlines():
             if line.startswith(f"{key}="):

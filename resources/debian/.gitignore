@@ -1,6 +1,0 @@
-*.substvars
-.debhelper.log
-resources/
-debhelper-build-stamp
-files
-tmp/

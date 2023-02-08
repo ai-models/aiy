@@ -4,6 +4,7 @@ import os
 import platform
 import sys
 
+from rich import pager
 from rich.console import Console
 from rich.markdown import Markdown
 from rich.prompt import Prompt
@@ -12,7 +13,7 @@ from resources import config
 from resources.conduit import get_completion
 
 console = Console()
-version = "0.2.0"
+version = "0.3.0"
 
 
 def pre_completion(user_input):
@@ -28,8 +29,8 @@ def pre_completion(user_input):
 
 
 def post_completion(openai_response):
+    openai_response = f"> Aiy v{version}\n\n" + openai_response
     if config.get_expert_mode() != "true":
-        openai_response = f"> Aiy v{version}\n\n" + openai_response
         openai_response += '\n\n[Notice] OpenAI\'s models have limited knowledge after 2020. Commands and versions' \
                            'may be outdated. Recommendations are not guaranteed to work and may be dangerous.' \
                            'To disable this notice, switch to expert mode with `aiy --expert`.'
@@ -61,12 +62,23 @@ def main():
     # Add arguments for expert mode, API key reset, version, and prompt
     parser.add_argument('-x', '--expert', action="store_true", help='Toggle warning', dest='expert')
     parser.add_argument('-i', '--key', action="store_true", help='Reset API key', dest='apikey')
-    parser.add_argument('-v', '--version', action="store_true", help='Get Version', dest='version')
+    parser.add_argument('-v', '--version', action="store_true", help=f'Get Version (hint: it\'s {version})', dest='version')
+    parser.add_argument('--licenses', action="store_true", help='Show Aiy & Third Party Licenses', dest='licenses')
     parser.add_argument('prompt', type=str, nargs='?', help='Prompt to send')
     args = parser.parse_args()
 
     if args.version:
         console.print("aiy version: " + version)
+        sys.exit()
+    if args.licenses:
+        # print LICENSE file with pagination
+        with console.pager():
+            try:
+                with open("LICENSE", "r") as f:
+                    console.print(f.read())
+            except FileNotFoundError:
+                with open("/app/bin/LICENSE", "r") as f:
+                    console.print(f.read())
         sys.exit()
     config.check_config(console)
     if args.apikey:
